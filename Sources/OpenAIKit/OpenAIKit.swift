@@ -24,11 +24,19 @@ public final class OpenAIKit: NSObject {
 	private(set) weak var sslDelegate: OpenAISSLDelegate?
 	
 	/// Initialize `OpenAIKit` with your API Token wherever convenient in your project. Organization name is optional.
-	public init(apiToken: String, organization: String? = nil, timeoutInterval: TimeInterval = 60, customOpenAIURL: String? = nil, sslCerificatePath: String? = nil) {
+    public init(apiToken: String, organization: String? = nil, timeoutInterval: TimeInterval = 60, customOpenAIURL: String? = nil, sslCerificatePath: String? = nil, customEndpoints: OpenAIKitEndpointProvider? = nil) {
 		self.apiToken = apiToken
 		self.organization = organization
 		self.customOpenAIURL = customOpenAIURL
 		self.sslCerificatePath = sslCerificatePath
+        
+        if let customEndpoints {
+            OpenAIEndpoint.completionsRoute = customEndpoints.completionsRoute
+            OpenAIEndpoint.chatCompletionsRoute = customEndpoints.chatCompletionsRoute
+            OpenAIEndpoint.editsRoute = customEndpoints.editsRoute
+            OpenAIEndpoint.dalleImageRoute = customEndpoints.dalleImageRoute
+            OpenAIEndpoint.dalleImageEditRoute = customEndpoints.dalleImageEditRoute
+        }
 		
 		let delegate = OpenAISSLDelegate(sslCerificatePath: sslCerificatePath)
 		

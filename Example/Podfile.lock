@@ -1,5 +1,5 @@
 PODS:
-  - OpenAIKit (1.8.0)
+  - OpenAIKit (1.9.4)
   - SDWebImage (5.15.4):
     - SDWebImage/Core (= 5.15.4)
   - SDWebImage/Core (5.15.4)
@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  OpenAIKit: b8fe0e542751a809af8246fe8930ff5c5bfe4909
+  OpenAIKit: 026ec1a5b1e2b10d1197656b32fee6dcf7195d7d
   SDWebImage: 1c39de67663e5eebb2f41324d5d580eeea12dd4c
 
 PODFILE CHECKSUM: 14cb438400b969c56f333517c46fa41b611026f0
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.15.2

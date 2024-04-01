@@ -80,6 +80,7 @@ Additional optional initializations parameters list:
 - `timeoutInterval: TimeInterval` - timeout interval for OpenAI API response. Default value is `60` sec.
 - `customOpenAIURL: String?` - custom endpoint to customize OpenAI API endpoint. Default value is `nil`. **Attention!** If you customize `customOpenAIURL` with your own instead of default OpenAI URL (for example `customOpenAIURL: "https://openai.mysite.test"`) - routes and method **DOESN'T CHANGE**! All routes keep their implementation from [OpenAI public API](https://platform.openai.com/docs/api-reference/).
 - `sslCerificatePath: String?` - path to `*.cer` SSL certificate file to validate it with OpenAI's certificate or your server's if you use custom `customOpenAIURL`. Default value is `nil`.
+- `customEndpoint: OpenAIKitEndpointProvider` - A custom object which provides arbitrary endpoints to use in addition to the `customOpenAIURL` parameter. Default value is `nil`.
 
 ### SSL Handshake
 
