@@ -41,11 +41,19 @@ protocol EndpointProvider {
 }
 
 public struct OpenAIKitEndpointProvider: EndpointProvider {
-    var completionsRoute: String
-    var chatCompletionsRoute: String
-    var editsRoute: String
-    var dalleImageRoute: String
-    var dalleImageEditRoute: String
+    public var completionsRoute: String
+    public var chatCompletionsRoute: String
+    public var editsRoute: String
+    public var dalleImageRoute: String
+    public var dalleImageEditRoute: String
+    
+    public init(completionsRoute: String, chatCompletionsRoute: String, editsRoute: String, dalleImageRoute: String, dalleImageEditRoute: String) {
+        self.completionsRoute = completionsRoute
+        self.chatCompletionsRoute = chatCompletionsRoute
+        self.editsRoute = editsRoute
+        self.dalleImageRoute = dalleImageRoute
+        self.dalleImageEditRoute = dalleImageEditRoute
+    }
 }
 
 
